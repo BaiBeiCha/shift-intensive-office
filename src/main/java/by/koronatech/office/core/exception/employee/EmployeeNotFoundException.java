@@ -1,4 +1,4 @@
-package by.koronatech.office.core.exaption.employee;
+package by.koronatech.office.core.exception.employee;
 
 public class EmployeeNotFoundException extends RuntimeException {
 

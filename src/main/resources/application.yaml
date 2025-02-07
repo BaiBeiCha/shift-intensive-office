@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: office
+
+  datasource:
+    url: jdbc:postgresql://office-db:5432/office
+    username: officeapp
+    password: officeapp
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update

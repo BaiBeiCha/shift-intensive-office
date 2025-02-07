@@ -1,4 +1,4 @@
-package by.koronatech.office.api.dto;
+package by.koronatech.office.api.dto.department;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,16 +9,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetEmployeeDTO {
+public class GetDepartmentDTO {
 
     private Long id;
 
     private String name;
-
-    private double salary;
-
-    private String department;
-
-    private boolean manager;
 
 }

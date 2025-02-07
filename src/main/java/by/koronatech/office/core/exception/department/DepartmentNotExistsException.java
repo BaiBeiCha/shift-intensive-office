@@ -1,4 +1,4 @@
-package by.koronatech.office.core.exaption.department;
+package by.koronatech.office.core.exception.department;
 
 public class DepartmentNotExistsException extends RuntimeException {
 
