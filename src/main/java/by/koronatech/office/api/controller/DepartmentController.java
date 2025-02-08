@@ -1,6 +1,6 @@
 package by.koronatech.office.api.controller;
 
-import by.koronatech.office.api.dto.GetDepartmentDTO;
+import by.koronatech.office.api.dto.department.GetDepartmentDTO;
 import by.koronatech.office.core.mapper.department.GetDepartmentMapper;
 import by.koronatech.office.core.service.DepartmentService;
 import lombok.RequiredArgsConstructor;

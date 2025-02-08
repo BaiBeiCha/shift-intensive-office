@@ -1,4 +1,4 @@
-package by.koronatech.office.api.dto;
+package by.koronatech.office.api.dto.employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,6 +17,6 @@ public class CreateEmployeeDTO {
 
     private String department;
 
-    private boolean manager;
+    private boolean isManager;
 
 }

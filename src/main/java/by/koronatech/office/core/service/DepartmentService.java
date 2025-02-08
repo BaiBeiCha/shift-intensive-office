@@ -10,4 +10,6 @@ public interface DepartmentService {
 
     boolean existsByName(String name);
 
+    Department findByName(String name);
+
 }

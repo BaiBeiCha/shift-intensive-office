@@ -1,14 +1,22 @@
 package by.koronatech.office.api.controller;
 
-import by.koronatech.office.api.dto.CreateEmployeeDTO;
-import by.koronatech.office.api.dto.GetEmployeeDTO;
-import by.koronatech.office.core.exaption.employee.EmployeeNotFoundException;
+import by.koronatech.office.api.dto.employee.CreateEmployeeDTO;
+import by.koronatech.office.api.dto.employee.GetEmployeeDTO;
 import by.koronatech.office.core.mapper.employee.CreateEmployeeMapper;
 import by.koronatech.office.core.mapper.employee.GetEmployeeMapper;
 import by.koronatech.office.core.model.Employee;
 import by.koronatech.office.core.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -45,20 +53,12 @@ public class EmployeeController {
     @PutMapping("/{id}")
     public GetEmployeeDTO changeEmployee(@PathVariable long id,
                                          @RequestBody CreateEmployeeDTO createEmployeeDTO) {
-        if (employeeService.existsById(id)) {
-            Employee employee = createEmployeeMapper.merge(employeeService.findById(id), createEmployeeDTO);
-            return getEmployeeMapper.toDto(employeeService.save(employee));
-        } else {
-            throw new EmployeeNotFoundException(id);
-        }
+        Employee employee = createEmployeeMapper.merge(employeeService.findById(id), createEmployeeDTO);
+        return getEmployeeMapper.toDto(employeeService.save(employee));
     }
 
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable long id) {
-        if (employeeService.existsById(id)) {
-            employeeService.delete(id);
-        } else {
-            throw new EmployeeNotFoundException(id);
-        }
+        employeeService.delete(id);
     }
 }
